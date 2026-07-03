@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendy & Catchy Boutique Business</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About Us</a></li>
+
+        <li><a href="#menu">Collection</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+        <li><a href="#help">Help</a></li>
+
+    </ul>
+
+    <div class="cart-box">
+
+        🛒 <span id="cart-count">0</span>
+
+    </div>
+
+</nav>
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <h1>Welcome to Trendy & Catchy Boutique Business</h1>
+
+    <p>Find your perfect look with our latest fashion collection.</p>
+
+    <a href="#menu" class="btn">
+
+        Shop Now
+
+    </a>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+
+        Step into elegance with every collection.
+        Make every moment a fashionable one.
+
+    </p>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="menu">
+
+<h2>Our Dress Collection</h2>
+
+<div class="products">
+
+<!-- Product 1 -->
+
+<div class="item">
+
+<img src="saree.jpg" alt="Saree">
+
+<h3>Saree</h3>
+
+<p>₹500</p>
+
+<button onclick="addToCart('Saree',500)">
+
+Add to Cart
+
+</button>
+
+</div>
+
+<!-- Product 2 -->
+
+<div class="item">
+
+<img src="salwar.jpeg" alt="Salwar Suit">
+
+<h3>Salwar Suit</h3>
+
+<p>₹450</p>
+
+<button onclick="addToCart('Salwar Suit',450)">
+
+Add to Cart
+
+</button>
+
+</div>
+
+<!-- Product 3 -->
+
+<div class="item">
+
+<img src="cotton kurti.jpg" alt="Cotton Kurti">
+
+<h3>Cotton Kurti</h3>
+
+<p>₹699</p>
+
+<button onclick="addToCart('Cotton Kurti',699)">
+
+Add to Cart
+
+</button>
+
+</div>
+
+<!-- Product 4 -->
+
+<div class="item">
+
+<img src="printed kurti.webp" alt="Printed Kurti">
+
+<h3>Printed Kurti</h3>
+
+<p>₹799</p>
+
+<button onclick="addToCart('Printed Kurti',799)">
+
+Add to Cart
+
+</button>
+
+</div>
+
+<!-- Product 5 -->
+
+<div class="item">
+
+<img src="Anarkali.jpeg" alt="Anarkali">
+
+<h3>Anarkali</h3>
+
+<p>₹1499</p>
+
+<button onclick="addToCart('Anarkali',1499)">
+
+Add to Cart
+
+</button>
+
+</div>
+
+<!-- Product 6 -->
+
+<div class="item">
+
+<img src="bodycon dress.webp" alt="Bodycon Dress">
+
+<h3>Bodycon Dress</h3>
+
+<p>₹1500</p>
+
+<button onclick="addToCart('Bodycon Dress',1500)">
+
+Add to Cart
+
+</button>
+</div>
+<!-- Product 7 -->
+
+<div class="item">
+
+    <img src="Floral.webp" alt="Floral Dress">
+
+    <h3>Floral Dress</h3>
+
+    <p>₹899</p>
+
+    <button onclick="addToCart('Floral Dress',899)">
+        Add to Cart
+    </button>
+
+</div>
+
+<!-- Product 8 -->
+
+<div class="item">
+
+    <img src="Wrap dress.webp" alt="Wrap Dress">
+
+    <h3>Wrap Dress</h3>
+
+    <p>₹1299</p>
+
+    <button onclick="addToCart('Wrap Dress',1299)">
+        Add to Cart
+    </button>
+
+</div>
+
+<!-- Product 9 -->
+
+<div class="item">
+
+    <img src="Chudidar.jpeg" alt="Chudidar Set">
+
+    <h3>Chudidar Set</h3>
+
+    <p>₹1599</p>
+
+    <button onclick="addToCart('Chudidar Set',1599)">
+        Add to Cart
+    </button>
+
+</div>
+
+<!-- Product 10 -->
+
+<div class="item">
+
+    <img src="Kaftan dress.jpg" alt="Kaftan Dress">
+
+    <h3>Kaftan Dress</h3>
+
+    <p>₹1399</p>
+
+    <button onclick="addToCart('Kaftan Dress',1399)">
+        Add to Cart
+    </button>
+
+</div>
+
+<!-- Product 11 -->
+
+<div class="item">
+
+    <img src="Midi dress.webp" alt="Midi Dress">
+
+    <h3>Midi Dress</h3>
+
+    <p>₹1199</p>
+
+    <button onclick="addToCart('Midi Dress',1199)">
+        Add to Cart
+    </button>
+
+</div>
+
+<!-- Product 12 -->
+
+<div class="item">
+
+    <img src="Half saree.webp" alt="Half Saree">
+
+    <h3>Half Saree</h3>
+
+    <p>₹1500</p>
+
+    <button onclick="addToCart('Half Saree',1500)">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CART ================= -->
+
+<section class="cart-section">
+
+    <h2>Your Cart</h2>
+
+    <ul id="cart-items"></ul>
+
+    <h3>Total : ₹<span id="total">0</span></h3>
+
+    <button onclick="payNow()">
+        Proceed to Payment
+    </button>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>Email : trendycatchyboutique@gmail.com</p>
+
+    <p>Phone : +91 9894003456</p>
+
+</section>
+
+<!-- ================= HELP ================= -->
+
+<section id="help">
+
+    <h2>Help Center</h2>
+
+    <p>
+        Contact us for size, style, order support, or delivery-related queries.
+    </p>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p style="text-align:center; padding:20px; background:#e75480; color:white;">
+
+        © 2026 Trendy & Catchy Boutique Business | All Rights Reserved
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
